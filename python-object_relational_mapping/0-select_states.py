@@ -16,7 +16,9 @@ def main() -> None:
     cursor = db.cursor()
     cursor.execute("SELECT * FROM states ORDER BY id ASC")
     for row in cursor.fetchall():
-        print(row)
+        state_id = row[0]
+        state_name = row[1]
+        print(f"{state_id}: {state_name}")
     cursor.close()
     db.close()
 
