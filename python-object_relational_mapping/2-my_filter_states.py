@@ -20,7 +20,9 @@ def main() -> None:
         charset="utf8",
     )
     cursor = db.cursor()
-    query = "SELECT * FROM states WHERE name = '{}' ORDER BY id ASC".format(searched_name)
+    query = "SELECT * FROM states WHERE name = '{}' ORDER BY id ASC".format(
+        searched_name
+    )
     cursor.execute(query)
     for row in cursor.fetchall():
         print(row)
